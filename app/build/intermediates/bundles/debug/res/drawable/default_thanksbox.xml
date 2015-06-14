@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+	<stroke android:color="#FFBBB4" android:width="2px"/>
+    <solid android:color="#ffffff"/>
+    <corners android:radius="8dp" />
+
+</shape><!-- From: file:/D:/DemoAndroidProjects/ConverterVideo/app/src/main/res/drawable/default_thanksbox.xml -->

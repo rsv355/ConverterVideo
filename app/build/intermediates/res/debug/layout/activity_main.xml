@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  	android:background="#eeeeee"
+	tools:context="com.app.convertervideo.MainActivity" >
+	
+     <LinearLayout
+        
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  	android:orientation="horizontal" >
+       
+        <TextView 
+            android:textSize="18sp"
+     android:background="#000000"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF"
+    android:text="Video Converter"
+    android:gravity="center"
+    android:layout_gravity="center"        
+    android:layout_width="match_parent"
+    android:layout_height="48dp"/>
+        
+    </LinearLayout>
+    
+<ScrollView 
+    
+    android:layout_width="match_parent"
+    	android:layout_height="match_parent">
+    <LinearLayout
+        android:padding="12dp"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+  		android:orientation="vertical" >
+  		
+        <TextView
+            android:padding="16dp"
+            android:singleLine="true" 
+              android:layout_marginTop="10dp"  
+            android:background="@drawable/default_edittext"
+        android:id="@+id/txtBox"   
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"/>
+        
+        <Button
+              android:layout_marginTop="10dp"  
+            android:textStyle="bold"  
+            android:background="@drawable/default_button_selector"        
+            android:text="Select Video"
+            android:id="@+id/btnSelect"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            
+            />        
+      
+          
+        <Button  
+              android:layout_marginTop="10dp"
+            android:textStyle="bold"  
+            android:background="@drawable/default_button_selector"        
+            android:text="Select Convert Type"
+            android:id="@+id/btnExtension"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            
+            />
+        <Button  
+              android:layout_marginTop="10dp"
+            android:textStyle="bold"  
+            android:background="@drawable/default_button_selector"        
+            android:text="Convert"
+            android:id="@+id/btnConvert"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            
+            />
+        
+        <Button  
+             android:layout_marginTop="10dp"
+            android:textStyle="bold"  
+            android:background="@drawable/default_button_selector"        
+            android:text="More Apps"
+            android:id="@+id/btnMoreApps"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            
+            />
+        
+          
+        <Button  
+             android:layout_marginTop="10dp"
+            android:textStyle="bold"  
+            android:background="@drawable/default_button_selector"        
+            android:text="Rate Us"
+            android:id="@+id/btnRate"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            
+            />
+        
+         <TextView
+             android:textStyle="bold"
+            android:padding="16dp"
+              android:layout_marginTop="10dp"  
+            android:background="@drawable/default_thanksbox"
+       android:textColor="#000000"
+       android:text="Thanks for using this application, after converting the file, you will find it in Video Converter Folder." 
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"/>
+        
+    </LinearLayout>
+    
+</ScrollView>
+    
+    
+   
+
+</LinearLayout>
+<!-- From: file:/D:/DemoAndroidProjects/ConverterVideo/app/src/main/res/layout/activity_main.xml -->

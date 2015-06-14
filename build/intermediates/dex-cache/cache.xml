@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\pre-dexed\debug\classes-90dd617c10f7918cfb8f04be02fe5a3f948a7e82.jar" />
+    </item>
+    <item
+        jar="D:\Android-SDK\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-f3733e160897687d9290fe80ade6ee22494e6cf3.jar" />
+    </item>
+    <item
+        jar="D:\DemoAndroidProjects\ConverterVideo\app\libs\picasso-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\pre-dexed\debug\picasso-2.4.0-b7dd5381504f3d5ffed8fc93ffc11e0ff0b2d87e.jar" />
+    </item>
+    <item
+        jar="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\pre-dexed\debug\classes-b1ae871e0849810ab4f10863d04fdc348386dfe8.jar" />
+    </item>
+    <item
+        jar="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\DemoAndroidProjects\ConverterVideo\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-99e4f3f4b1808fc17750e2ffff947e185be5c377.jar" />
+    </item>
+
+</items>
