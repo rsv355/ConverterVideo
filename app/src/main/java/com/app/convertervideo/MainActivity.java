@@ -6,12 +6,19 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.learnncode.mediachooser.MediaChooser;
 import com.learnncode.mediachooser.activity.BucketHomeFragmentActivity;
+import com.learnncode.mediachooser.activity.HomeFragmentActivity;
 
 
-
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -36,6 +43,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+	InterstitialAd interstitial;
+	boolean isAdLod = false;
+	AdRequest adRequest;
 	MediaGridViewAdapter adapter;
 	GridView gridView;
 	int PICKFILE_RESULT_CODE = 101;
@@ -45,11 +55,29 @@ public class MainActivity extends ActionBarActivity {
 	CharSequence[] extension = new CharSequence[9];
 	String ORG_PATH,EXTENSION;
 	boolean isExtensionSelected=false;
+	Timer timer ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
+
+
+
+		interstitial = new InterstitialAd(MainActivity.this);
+		interstitial.setAdUnitId("ca-app-pub-1700338446399525/9379726899");
+
+
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		// Request for Ads
+		adRequest = new AdRequest.Builder()
+				.build();
+
+		// Load ads into Banner Ads
+		adView.loadAd(adRequest);
+
+
+
 		 txtBox = (TextView)findViewById(R.id.txtBox);
 		
 		 btnSelect = (Button)findViewById(R.id.btnSelect);
@@ -90,16 +118,18 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 
-				MediaChooser.setSelectionLimit(1);
-				MediaChooser.showOnlyVideoTab();
-				Intent intent = new Intent(MainActivity.this, BucketHomeFragmentActivity.class);
-				startActivity(intent);
+			/*	//MediaChooser.setSelectionLimit(1);
+				//MediaChooser.showOnlyVideoTab();
+
+			//	Intent intent = new Intent(MainActivity.this, BucketHomeFragmentActivity.class);
+				Intent intent = new Intent(MainActivity.this, HomeFragmentActivity.class);
+				startActivity(intent);*/
 
 				
 				// TODO Auto-generated method stub
-				/*Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+				Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 				intent.setType("file/mp4");
-				startActivityForResult(intent, PICKFILE_RESULT_CODE);*/
+				startActivityForResult(intent, PICKFILE_RESULT_CODE);
 			}
 		});
 		 
@@ -119,11 +149,90 @@ public class MainActivity extends ActionBarActivity {
 				}
 			}
 		});
-		
-		
+
+		int count = 100; //Declare as inatance variable
+
+		 timer = new Timer();
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+
+
+						Handler handler = new Handler();
+						handler.postDelayed(new Runnable() {
+
+							@Override
+							public void run() {
+
+									interstitial.loadAd(adRequest);
+								displayInterstitial();
+								/*// Prepare an Interstitial Ad Listener
+								interstitial.setAdListener(new AdListener() {
+									public void onAdLoaded() {
+										// Call displayInterstitial() function
+										displayInterstitial();
+
+									}
+								};*/
+							}
+						}, 50000);
+
+					}
+				});
+			}
+		}, 0, 1000);
 	}
-	
-	
+	public void stoptimertask(View v) {
+		//stop the timer, if it's not already null
+		if (timer != null) {
+			timer.cancel();
+			timer = null;
+		}
+	}
+	public void displayInterstitial() {
+		// If Ads are loaded, show Interstitial else show nothing.
+		if (interstitial.isLoaded()) {
+			interstitial.show();
+			isAdLod=true;
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+	}
+
+	@Override
+	public void onBackPressed() {
+
+		interstitial.loadAd(adRequest);
+		// Prepare an Interstitial Ad Listener
+		interstitial.setAdListener(new AdListener() {
+			public void onAdLoaded() {
+				// Call displayInterstitial() function
+				displayInterstitial();
+
+			}
+
+			@Override
+			public void onAdClosed() {
+				super.onAdClosed();
+				timer.cancel();
+				finish();
+				//super.onBackPressed();
+			}
+		});
+
+
+
+	}
+
 	BroadcastReceiver videoBroadcastReceiver = new BroadcastReceiver() {
 
 		@Override

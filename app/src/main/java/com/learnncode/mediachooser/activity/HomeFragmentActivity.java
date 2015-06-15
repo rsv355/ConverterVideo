@@ -85,10 +85,10 @@ VideoFragment.OnVideoSelectedListener{
 		headerBarCamera.setOnClickListener(clickListener);
 		headerBarDone.setOnClickListener(clickListener);
 
-		if(! MediaChooserConstants.showCameraVideo){
+		/*if(! MediaChooserConstants.showCameraVideo){
 			headerBarCamera.setVisibility(View.GONE);
-		}
-
+		}*/
+		headerBarCamera.setVisibility(View.GONE);
 
 		if(getIntent() != null && (getIntent().getBooleanExtra("isFromBucket", false))){
 
