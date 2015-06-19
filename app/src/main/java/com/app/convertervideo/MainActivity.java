@@ -244,6 +244,7 @@ public class MainActivity extends ActionBarActivity {
 		}
 	};
 
+
 	private void setAdapter( List<String> filePathList) {
 
 		Log.e("Video Path",filePathList.get(0).toString());
