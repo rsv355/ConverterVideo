@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/D:/DemoAndroidProjects/ConverterVideo/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="options">
+      <item>Video</item>
+      <item>Audio</item>
+   </string-array>
     <!-- From: file:/D:/DemoAndroidProjects/ConverterVideo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>

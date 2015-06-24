@@ -36,9 +36,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +58,7 @@ public class MainActivity extends ActionBarActivity {
 	String ORG_PATH,EXTENSION;
 	boolean isExtensionSelected=false;
 	Timer timer ;
+	Spinner spOptions;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,13 +82,18 @@ public class MainActivity extends ActionBarActivity {
 
 
 		 txtBox = (TextView)findViewById(R.id.txtBox);
-		
+		 spOptions = (Spinner)findViewById(R.id.spOptions);
 		 btnSelect = (Button)findViewById(R.id.btnSelect);
 		 btnExtension = (Button)findViewById(R.id.btnExtension);
 		 btnConvert = (Button)findViewById(R.id.btnConvert);
 		 btnMoreApps = (Button)findViewById(R.id.btnMoreApps);
 		 btnRate = (Button)findViewById(R.id.btnRate);
-		
+
+		ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinneritem,R.id.nameTextView,getResources().getStringArray(R.array.options));
+		spOptions.setAdapter(arrayAdapter);
+
+
+
 		 IntentFilter videoIntentFilter = new IntentFilter(MediaChooser.VIDEO_SELECTED_ACTION_FROM_MEDIA_CHOOSER);
 			registerReceiver(videoBroadcastReceiver, videoIntentFilter);
 
@@ -151,7 +159,7 @@ public class MainActivity extends ActionBarActivity {
 		});
 
 		int count = 100; //Declare as inatance variable
-
+/*
 		 timer = new Timer();
 		timer.schedule(new TimerTask() {
 
@@ -171,14 +179,7 @@ public class MainActivity extends ActionBarActivity {
 
 									interstitial.loadAd(adRequest);
 								displayInterstitial();
-								/*// Prepare an Interstitial Ad Listener
-								interstitial.setAdListener(new AdListener() {
-									public void onAdLoaded() {
-										// Call displayInterstitial() function
-										displayInterstitial();
 
-									}
-								};*/
 							}
 						}, 50000);
 
@@ -186,6 +187,11 @@ public class MainActivity extends ActionBarActivity {
 				});
 			}
 		}, 0, 1000);
+		*/
+
+
+
+
 	}
 	public void stoptimertask(View v) {
 		//stop the timer, if it's not already null
@@ -265,6 +271,7 @@ public class MainActivity extends ActionBarActivity {
 					|| Extension.equalsIgnoreCase(".mpg")
 					|| Extension.equalsIgnoreCase(".mpeg")
 					|| Extension.equalsIgnoreCase(".svi")
+					|| Extension.equalsIgnoreCase(".mp3")
 					|| Extension.equalsIgnoreCase(".3gp")){
 
 				String Filename = temp2.substring(Fpath.lastIndexOf("/")+1,temp2.length());

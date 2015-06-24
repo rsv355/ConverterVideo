@@ -23,5 +23,10 @@
     <string name="file"> file. </string>
     <string name="files"> files. </string>
     <string name="no_media_file_available"> No media file available.</string>
+
+   <string-array name="options">
+      <item>Video</item>
+      <item>Audio</item>
+   </string-array>
     
 </resources>
